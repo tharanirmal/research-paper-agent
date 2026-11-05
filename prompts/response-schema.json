@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": ["reasoning", "answer", "key_findings", "excluded_papers", "gaps", "next_steps", "confidence"],
+  "properties": {
+    "reasoning": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step", "result"],
+        "properties": {
+          "step": { "type": "string", "enum": ["Understand", "Screen", "Extract", "Compare", "Check", "Conclude"] },
+          "result": { "type": "string" }
+        }
+      }
+    },
+    "answer": { "type": "string" },
+    "key_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "citations"],
+        "properties": {
+          "claim": { "type": "string" },
+          "citations": { "type": "array", "items": { "type": "integer" } }
+        }
+      }
+    },
+    "excluded_papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "reason"],
+        "properties": {
+          "id": { "type": "integer" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "gaps": { "type": "array", "items": { "type": "string" } },
+    "next_steps": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+  }
+}

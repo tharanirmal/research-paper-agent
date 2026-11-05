@@ -1,0 +1,6 @@
+{
+  "name": "Research Paper Agent",
+  "description": "An academic research agent that retrieves scholarly papers from OpenAlex and synthesizes citation-backed answers with verifiable step-by-step reasoning.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
